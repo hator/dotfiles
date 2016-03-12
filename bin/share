@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euo pipefail
+
+chmod a+r $1
+
+scp $1 neutrino.re:www/share/
+
+link="http://$USER.neutrino.re/share/$(basename $1)"
+echo -n "$link" | xsel -b
+echo -n "$link" | xsel
+
+chromium $link

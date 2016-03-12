@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+name=$(dmenu -p "screenshot name:" </dev/null)
+if [ -z "$name" ]; then
+	name=screen-$(date +%Y%m%d-%T)
+fi
+
+scrot -s $HOME/tmp/${name}.png
+share $HOME/tmp/${name}.png

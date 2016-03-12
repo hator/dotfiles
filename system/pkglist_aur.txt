@@ -1,0 +1,11 @@
+erusfont
+fingerprint-gui
+firebird-superserver
+gohufont
+jdk
+libgcrypt15
+libptp2
+package-query
+profile-sync-daemon
+ttf-inconsolata-g
+yaourt
