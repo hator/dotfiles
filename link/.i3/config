@@ -1,7 +1,7 @@
 # i3 config file (v4)
 
 set $mod Mod4
-set $terminal urxvt -font xft:gohufont:14
+set $terminal urxvt
 
 exec --no-startup-id wallpaper.sh
 

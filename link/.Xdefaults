@@ -1,0 +1,26 @@
+urxvt.font: xft:Gohu GohuFont:size=12
+
+urxvt.iso14755: false
+
+urxvt.perl-lib: /home/hator/dotfiles/bin/
+urxvt.perl-ext-common: default,matcher,urxvt-colors
+
+! dynamic colors
+urxvt*dynamicColors: 1
+urxvt.keysym.F12: perl:urxvt-colors:do
+
+! clickable urls
+urxvt.url-launcher: xdg-open
+urxvt.matcher.button: 1
+urxvt.matcher.rend.0: Uline
+
+! change fonts
+! Big size (presentation font)
+urxvt.keysym.Control-equal: command:\033]710;xft:Inconsolata:size=36\007
+! Small size normal
+urxvt.keysym.Control-minus: command:\033]710;xft:Gohu GohuFont:size=12\007
+
+! better scroll for less etc.
+urxvt.secondaryScreen: 1
+urxvt.secondaryScroll: 0
+urxvt.secondaryWheel: 1
