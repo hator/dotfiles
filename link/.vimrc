@@ -61,6 +61,11 @@ au FocusLost * :wa
 """"""""""
 "colorscheme
 if has('gui_running')
+	"remove gui toolbar, menus and scrollbars
+	set guioptions-=m
+	set guioptions-=T
+	set guioptions-=r
+	set guioptions-=L
 	set background=light
 else
 	let g:solarized_termcolors=256
