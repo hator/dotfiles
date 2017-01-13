@@ -15,7 +15,7 @@ bindsym $mod+Return exec --no-startup-id $terminal
 bindsym $mod+r exec --no-startup-id dmenu_run
 bindsym $mod+t exec uzbl-browser
 
-bindsym $mod+m exec $terminal --title MOC -e mocp
+bindsym $mod+m exec spotify
 
 bindsym $mod+comma exec --no-startup-id amixer -M set Master 5%-
 bindsym $mod+period exec --no-startup-id amixer -M set Master 5%+
