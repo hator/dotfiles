@@ -49,10 +49,10 @@ plugins=(git stack)
 
 # User configuration
 
-export PATH="/opt/firebird/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/hator/.gem/ruby/2.1.0/bin:/home/hator/.cabal/bin"
+source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
 export WORKON_HOME=~/PythonEnvs
 
 source /usr/bin/virtualenvwrapper.sh
@@ -83,10 +83,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias fuck='$(thefuck $(fc -ln -1))'
-alias FUCK='fuck'
-
-export EDITOR=vim
-export VISUAL=gvim
 
