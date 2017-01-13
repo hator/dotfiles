@@ -51,49 +51,41 @@ Bundle 'jondkinney/dragvisuals.vim'
 	vmap <expr> D DVB_Duplicate()
 
 """"" Languages
-"Bundle 'c9s/vim-dev-plugin'
-"Bundle 'bitc/vim-hdevtools'
-"	au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-"	au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-"	au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
-Bundle 'tikhomirov/vim-glsl'
+Plugin 'tikhomirov/vim-glsl'
 Plugin 'pbrisbin/vim-syntax-shakespeare'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'vhda/verilog_systemverilog.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
+Plugin 'lambdatoast/elm.vim'
 
 """"" Completion
 Bundle 'Valloric/YouCompleteMe'
-	"https://github.com/Valloric/YouCompleteMe/issues/700
-	"let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-"Bundle 'gmarik/ide-popup.vim'
-	"http://vim.wikia.com/wiki/VimTip1228
-	"inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-	"inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-	"inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-	"inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-	"inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
-	"inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
-"" Syntax checking
-Bundle 'scrooloose/syntastic.git'
-	let g:syntastic_cpp_compiler = 'clang++'
-	let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-	let g:syntastic_python_checkers = []
+
+"http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+set completeopt=longest,menuone
+"inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc><Esc>"
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+" open omni completion menu closing previous if open and opening new menu without changing the text
+inoremap <expr> <C-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
+			\ '<C-x><C-o><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
+" open user completion menu closing previous if open and opening new menu without changing the text
+inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
+			\ '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
 
 """"" Colors
 Bundle 'altercation/vim-colors-solarized'
 
-
 """"" Util
-"Bundle 'editorconfig/editorconfig-vim'
 Bundle 'wincent/Command-T'
 Bundle 'majutsushi/tagbar'
 	nmap <F8> :TagbarToggle<CR>
 Bundle 'bling/vim-airline'
-	"from :help airline-config
-"	let g:airline_powerline_fonts=1
-"	let g:airline_left_sep = '⮀'
-"	let g:airline_left_alt_sep = '⮁'
-"	let g:airline_right_sep = '⮂'
-"	let g:airline_right_alt_sep = '⮃'
 Bundle 'bling/vim-bufferline'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'hator/scratch.vim'
