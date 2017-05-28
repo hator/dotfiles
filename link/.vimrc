@@ -66,7 +66,7 @@ if has('gui_running')
 	set guioptions-=T
 	set guioptions-=r
 	set guioptions-=L
-	set background=light
+	set background=dark
 else
 	let g:solarized_termcolors=256
 	set background=dark
@@ -75,6 +75,7 @@ endif
 syntax on "syntax highlight
 
 set guifont=Inconsolata\ 12
+"set guifont="-misc-inconsolata-medium-*-normal--*-120-*-*-*-*-*-*-"
 
 " 80 characters line
 let &colorcolumn=join(range(81,999), ",")
