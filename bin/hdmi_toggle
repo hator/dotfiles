@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Add following to UDEV rules
+# SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/hator/dotfiles/bin/hdmi_toggle"
+
+X_USER=$(w -h -s | grep ":[0-9]\W" | head -1 | awk '{print $1}')
+export XAUTHORITY=/home/$X_USER/.Xauthority
+
+EXTERNAL_OUTPUT="HDMI1"
+INTERNAL_OUTPUT="eDP1"
+
+/usr/bin/su $X_USER -c "xrandr" | grep $EXTERNAL_OUTPUT | grep " connected "
+if [ $? -eq 0 ]; then
+    /usr/bin/su $X_USER -c "xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto"
+    /usr/bin/logger "Enabling external screen"
+else
+    /usr/bin/su $X_USER -c "xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --off"
+    /usr/bin/logger "Disabling external screen"
+fi
