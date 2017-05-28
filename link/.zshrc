@@ -53,8 +53,6 @@ source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export WORKON_HOME=~/PythonEnvs
-
 source /usr/bin/virtualenvwrapper.sh
 
 source $ZSH/oh-my-zsh.sh
@@ -84,3 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
