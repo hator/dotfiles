@@ -3,7 +3,10 @@
 set $mod Mod4
 set $terminal urxvt
 
+exec --no-startup-id fluxgui
 exec --no-startup-id wallpaper.sh
+exec --no-startup-id nm-applet
+exec --no-startup-id blueberry-tray
 
 ############################
 ### PROGRAM KEY BINDINGS ###
@@ -20,12 +23,12 @@ bindsym $mod+m exec spotify
 bindsym $mod+comma exec --no-startup-id amixer -M set Master 5%-
 bindsym $mod+period exec --no-startup-id amixer -M set Master 5%+
 
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -M set Master 5%- unmute
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -M set Master 5%+ unmute
-bindsym XF86AudioMicMute exec --no-startup-id amixer set Mic toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ false ; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ false ; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86AudioPlay exec --no-startup-id mocp -G
 
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -5%
 
