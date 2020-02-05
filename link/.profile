@@ -4,7 +4,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/WebStorm-163.13906.20/bin:$PATH"
 export PATH="/opt/pycharm/bin:$PATH"
 export PATH="/opt/idea/bin:$PATH"
+export PATH="/opt/clion/bin:$PATH"
 export PATH="/opt/android-studio/bin:$PATH"
+export PATH="/home/hator/.local/bin:$PATH"
 export GOPATH="$HOME/w/go"
 
 if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
