@@ -23,8 +23,6 @@ Bundle 'tpope/vim-commentary'
 """""" Snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
 
 Bundle 'skammer/vim-css-color'
 Bundle 'groenewege/vim-less'
@@ -60,8 +58,17 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'lambdatoast/elm.vim'
 
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'dan-t/vim-hsimport'
+	autocmd FileType haskell nmap <silent> <F1> :silent update <bar> HsimportModule<CR>
+	autocmd FileType haskell nmap <silent> <F2> :silent update <bar> HsimportSymbol<CR>
+
 """"" Completion
-"Bundle 'Valloric/YouCompleteMe'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'Shougo/deoplete.nvim'
+	let g:deoplete#enable_at_startup = 1
 
 "http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 set completeopt=longest,menuone
@@ -82,7 +89,10 @@ inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Es
 Bundle 'altercation/vim-colors-solarized'
 
 """"" Util
-Bundle 'wincent/Command-T'
+Bundle 'ctrlpvim/ctrlp.vim'
+	let g:ctrlp_map = '<C-P>'
+	let g:ctrlp_cmd = 'CtrlP'
+	let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 Bundle 'majutsushi/tagbar'
 	nmap <F8> :TagbarToggle<CR>
 Bundle 'bling/vim-airline'
