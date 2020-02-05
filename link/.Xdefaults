@@ -24,3 +24,14 @@ urxvt.keysym.Control-minus: command:\033]710;xft:Gohu GohuFont:size=12\007
 urxvt.secondaryScreen: 1
 urxvt.secondaryScroll: 0
 urxvt.secondaryWheel: 1
+
+! scaling
+Xft.dpi: 120
+
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
